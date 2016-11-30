@@ -1,0 +1,1432 @@
+最新公司盒子 新装php7.0.13 不用 brew的 了
+
+因为 安装yii2 的一个 商城 应用 需要
+bogon:galaxy admindyn$ php init
+The mcrypt PHP extension is required by Yii2.bogon:galaxy admindyn$ 
+
+而brew安装的不能安装扩展 因此自己来
+
+
+
+
+
+
+bogon:php-7.0.13 admindyn$ ./configure --prefix=/usr/local/phpnew --exec-prefix=/usr/local/phpnew --datadir=/usr/local/phpnew --with-config-file-path=/usr/local/phpnew/etc -enable-bcmath -enable-calendar -enable-dba -enable-exif -enable-ftp -enable-gd-native-ttf -enable-mbregex -enable-mbstring -enable-shmop -enable-soap -enable-sockets -enable-sysvmsg -enable-sysvsem -enable-sysvshm -enable-wddx -enable-zip  --with-mysqli=mysqlnd --with-mhash --with-mysql-sock=/tmp/mysql.sock   --with-pdo-mysql=mysqlnd --with-fpm-user=php --with-fpm-group=php --with-gd --with-iconv --enable-mbstring --enable-fpm --enable-mysqlnd --with-curl --enable-session --with-mysql=shared,mysqlnd --enable-zip  --enable-mysqlnd 
+configure: WARNING: unrecognized options: --with-mysql
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for a sed that does not truncate output... /usr/bin/sed
+checking build system type... x86_64-apple-darwin16.1.0
+checking host system type... x86_64-apple-darwin16.1.0
+checking target system type... x86_64-apple-darwin16.1.0
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cc -E
+checking for icc... no
+checking for suncc... no
+checking whether cc understands -c and -o together... yes
+checking how to run the C preprocessor... cc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether ln -s works... yes
+checking for system library directory... lib
+checking whether to enable runpaths... yes
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking for gawk... no
+checking for nawk... no
+checking for awk... awk
+checking if awk is broken... no
+checking for bison... bison -y
+checking for bison version... invalid
+configure: WARNING: This bison version is not supported for regeneration of the Zend/PHP parsers (found: 2.3, min: 204, excluded: ).
+checking for re2c... re2c
+checking for re2c version... 0.15.3 (ok)
+checking whether to enable computed goto gcc extension with re2c... no
+checking whether cc supports -no-cpp-precomp... yes
+checking whether to force non-PIC code in shared modules... no
+checking whether /dev/urandom exists... yes
+checking whether /dev/arandom exists... no
+checking for global register variables support... no
+checking for pthreads_cflags... -pthread
+checking for pthreads_lib... pthread
+
+Configuring SAPI modules
+checking for Apache 2.0 handler-module support via DSO through APXS... no
+checking for setproctitle... no
+checking sys/pstat.h usability... no
+checking sys/pstat.h presence... no
+checking for sys/pstat.h... no
+checking for PS_STRINGS... no
+checking for CLI build... yes
+checking for embedded SAPI library support... no
+checking for FPM build... yes
+checking for setenv... yes
+checking for clearenv... no
+checking for setproctitle... (cached) no
+checking for library containing socket... none required
+checking for library containing inet_addr... none required
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking sysexits.h usability... yes
+checking sysexits.h presence... yes
+checking for sysexits.h... yes
+checking for prctl... no
+checking for clock_gettime... yes
+checking for ptrace... yes
+checking whether ptrace works... no
+checking for mach_vm_read... yes
+checking if gcc supports __sync_bool_compare_and_swap... yes
+checking for TCP_INFO... no
+checking for SO_LISTENQLEN... no
+checking for sysconf... yes
+checking for times... yes
+checking for kqueue... yes
+checking for port framework... no
+checking for /dev/poll... no
+checking for epoll... no
+checking for poll... yes
+checking for select... yes
+checking for apparmor... no
+checking for LiteSpeed support... no
+checking for phpdbg support... yes
+checking for phpdbg web SAPI support... no
+checking for phpdbg debug build... no
+checking whether termios.h defines TIOCGWINSZ... yes
+checking for CGI build... yes
+checking for socklen_t in sys/socket.h... yes
+checking for sun_len in sys/un.h... yes
+checking whether cross-process locking is required by accept()... no
+checking for chosen SAPI module... none
+checking for executable SAPI binaries...  cli fpm phpdbg cgi
+
+Running system checks
+checking for sendmail... /usr/sbin/sendmail
+checking whether system uses EBCDIC... no
+checking whether byte ordering is bigendian... no
+checking whether writing to stdout works... This is the test message -- yes
+checking for socket... yes
+checking for socketpair... yes
+checking for htonl... yes
+checking for gethostname... yes
+checking for gethostbyaddr... yes
+checking for yp_get_default_domain... yes
+checking for dlopen... yes
+checking for sin in -lm... yes
+checking for inet_aton... yes
+checking for ANSI C header files... (cached) yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for dirent.h... yes
+checking for ApplicationServices/ApplicationServices.h... yes
+checking for sys/param.h... yes
+checking for sys/types.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for netinet/in.h... (cached) yes
+checking for alloca.h... yes
+checking for arpa/inet.h... (cached) yes
+checking for arpa/nameser.h... yes
+checking for assert.h... yes
+checking for crypt.h... no
+checking for dns.h... yes
+checking for fcntl.h... (cached) yes
+checking for grp.h... yes
+checking for ieeefp.h... no
+checking for langinfo.h... yes
+checking for limits.h... yes
+checking for locale.h... yes
+checking for monetary.h... yes
+checking for netdb.h... yes
+checking for pwd.h... yes
+checking for resolv.h... yes
+checking for signal.h... yes
+checking for stdarg.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for syslog.h... yes
+checking for sysexits.h... (cached) yes
+checking for sys/ioctl.h... yes
+checking for sys/file.h... yes
+checking for sys/mman.h... yes
+checking for sys/mount.h... yes
+checking for sys/poll.h... yes
+checking for sys/resource.h... yes
+checking for sys/select.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/statfs.h... no
+checking for sys/statvfs.h... yes
+checking for sys/vfs.h... no
+checking for sys/sysexits.h... no
+checking for sys/varargs.h... no
+checking for sys/wait.h... yes
+checking for sys/loadavg.h... no
+checking for termios.h... yes
+checking for unistd.h... (cached) yes
+checking for unix.h... no
+checking for utime.h... yes
+checking for sys/utsname.h... yes
+checking for sys/ipc.h... yes
+checking for dlfcn.h... yes
+checking for assert.h... (cached) yes
+checking for fopencookie... no
+checking for broken getcwd... no
+checking for broken libc stdio... no
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for missing declarations of reentrant functions... done
+checking for fclose declaration... ok
+checking for tm_gmtoff in struct tm... yes
+checking for struct flock... yes
+checking for socklen_t... yes
+checking size of size_t... 8
+checking size of long long... 8
+checking size of long long int... 8
+checking size of long... 8
+checking size of int... 4
+checking size of intmax_t... 8
+checking size of ssize_t... 8
+checking size of ptrdiff_t... 8
+checking size of short... 2
+checking size of int... (cached) 4
+checking size of long... (cached) 8
+checking size of long long... (cached) 8
+checking for int8... no
+checking for int16... no
+checking for int32... no
+checking for int64... no
+checking for int8_t... yes
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for uint8... no
+checking for uint16... no
+checking for uint32... no
+checking for uint64... no
+checking for uint8_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for u_int8_t... yes
+checking for u_int16_t... yes
+checking for u_int32_t... yes
+checking for u_int64_t... yes
+checking for __builtin_expect... yes
+checking for __builtin_clz... yes
+checking for __builtin_ctzl... yes
+checking for __builtin_ctzll... yes
+checking for struct stat.st_blksize... yes
+checking for struct stat.st_blocks... yes
+checking for struct stat.st_rdev... yes
+checking for size_t... yes
+checking for uid_t in sys/types.h... yes
+checking for struct sockaddr_storage... yes
+checking for field sa_len in struct sockaddr... yes
+checking for IPv6 support... yes
+checking for vprintf... yes
+checking for _doprnt... no
+checking for alphasort... yes
+checking for asctime_r... yes
+checking for chroot... yes
+checking for ctime_r... yes
+checking for cuserid... no
+checking for crypt... yes
+checking for flock... yes
+checking for ftok... yes
+checking for funopen... yes
+checking for gai_strerror... yes
+checking for gcvt... yes
+checking for getloadavg... yes
+checking for getlogin... yes
+checking for getprotobyname... yes
+checking for getprotobynumber... yes
+checking for getservbyname... yes
+checking for getservbyport... yes
+checking for gethostname... (cached) yes
+checking for getrusage... yes
+checking for gettimeofday... yes
+checking for gmtime_r... yes
+checking for getpwnam_r... yes
+checking for getgrnam_r... yes
+checking for getpwuid_r... yes
+checking for grantpt... yes
+checking for inet_ntoa... yes
+checking for inet_ntop... yes
+checking for inet_pton... yes
+checking for isascii... yes
+checking for link... yes
+checking for localtime_r... yes
+checking for lockf... yes
+checking for lchown... yes
+checking for lrand48... yes
+checking for memcpy... yes
+checking for memmove... yes
+checking for mkstemp... yes
+checking for mmap... yes
+checking for nl_langinfo... yes
+checking for perror... yes
+checking for poll... yes
+checking for ptsname... yes
+checking for putenv... yes
+checking for realpath... yes
+checking for random... yes
+checking for rand_r... yes
+checking for scandir... yes
+checking for setitimer... yes
+checking for setlocale... yes
+checking for localeconv... yes
+checking for setenv... (cached) yes
+checking for setpgid... yes
+checking for setsockopt... yes
+checking for setvbuf... yes
+checking for shutdown... yes
+checking for sin... yes
+checking for snprintf... yes
+checking for srand48... yes
+checking for srandom... yes
+checking for statfs... yes
+checking for statvfs... yes
+checking for std_syslog... no
+checking for strcasecmp... yes
+checking for strcoll... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strftime... yes
+checking for strnlen... yes
+checking for strptime... yes
+checking for strstr... yes
+checking for strtok_r... yes
+checking for symlink... yes
+checking for tempnam... yes
+checking for tzset... yes
+checking for unlockpt... yes
+checking for unsetenv... yes
+checking for usleep... yes
+checking for utime... yes
+checking for vsnprintf... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for nanosleep... yes
+checking for nanosleep in -lrt... no
+checking for __nanosleep in -lrt... no
+checking for getaddrinfo... yes
+checking for __sync_fetch_and_add... yes
+checking for strlcat... yes
+checking for strlcpy... yes
+checking for getopt... yes
+checking for utime.h... (cached) yes
+checking whether utime accepts a null argument... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for declared timezone... yes
+checking for type of reentrant time-related functions... POSIX
+checking for readdir_r... yes
+checking for type of readdir_r... POSIX
+checking for in_addr_t... yes
+checking for crypt_r... no
+
+General settings
+checking whether to include gcov symbols... no
+checking whether to include debugging symbols... no
+checking layout of installed files... PHP
+checking path to configuration file... /usr/local/phpnew/etc
+checking where to scan for configuration files... 
+checking whether to enable PHP's own SIGCHLD handler... no
+checking whether to explicitly link against libgcc... no
+checking whether to enable short tags by default... yes
+checking whether to enable dmalloc... no
+checking whether to enable IPv6 support... yes
+checking whether to enable DTrace support... no
+checking how big to make fd sets... using system default
+
+Configuring extensions
+checking size of long... (cached) 8
+checking size of int... (cached) 4
+checking for int32_t... yes
+checking for uint32_t... yes
+checking for sys/types.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for strtoll... yes
+checking for atoll... yes
+checking for strftime... (cached) yes
+checking whether to enable LIBXML support... yes
+checking libxml2 install dir... no
+checking for xml2-config path... /usr/bin/xml2-config
+checking whether libxml build works... yes
+checking for OpenSSL support... no
+checking for Kerberos support... no
+checking whether to use system default cipher list instead of hardcoded value... no
+checking for PCRE library to use... bundled
+checking whether to enable PCRE JIT functionality... yes
+checking whether to enable the SQLite3 extension... yes
+checking bundled sqlite3 library... yes
+checking for ZLIB support... no
+checking if the location of ZLIB install directory is defined... no
+checking whether to enable bc style precision math functions... yes
+checking for BZip2 support... no
+checking whether to enable calendar conversion support... yes
+checking whether to enable ctype functions... yes
+checking for cURL support... yes
+checking for cURL in default path... found in /usr
+checking for cURL 7.10.5 or greater... libcurl 7.49.1
+checking for SSL support in libcurl... yes
+checking how to run the C preprocessor... cc -E
+checking for openssl support in libcurl... no
+checking for gnutls support in libcurl... no
+checking for curl_easy_perform in -lcurl... yes
+checking for curl_easy_strerror in -lcurl... yes
+checking for curl_multi_strerror in -lcurl... yes
+checking for QDBM support... no
+checking for GDBM support... no
+checking for NDBM support... no
+checking for TCADB support... no
+checking for Berkeley DB4 support... no
+checking for Berkeley DB3 support... no
+checking for Berkeley DB2 support... no
+checking for DB1 support... no
+checking for DBM support... no
+checking for CDB support... builtin
+checking for INI File support... builtin
+checking for FlatFile support... builtin
+checking whether to enable DBA interface... yes
+checking whether to enable DOM support... yes
+checking for xml2-config path... (cached) /usr/bin/xml2-config
+checking whether libxml build works... (cached) yes
+checking for ENCHANT support... no
+checking whether to enable EXIF (metadata from images) support... yes
+checking for fileinfo support... yes
+checking for strcasestr... yes
+checking for utimes... yes
+checking for strndup... yes
+checking whether to enable input filter support... yes
+checking pcre install prefix... no
+checking whether to enable FTP support... yes
+checking OpenSSL dir for FTP... no
+checking for GD support... yes
+checking for the location of libwebp... no
+checking for the location of libjpeg... no
+checking for the location of libpng... no
+checking for the location of libXpm... no
+checking for FreeType 2... no
+checking whether to enable truetype string function in GD... yes
+checking whether to enable JIS-mapped Japanese font support in GD... no
+If configure fails try --with-webp-dir=<DIR>
+If configure fails try --with-jpeg-dir=<DIR>
+checking for png_write_image in -lpng... yes
+If configure fails try --with-xpm-dir=<DIR>
+If configure fails try --with-freetype-dir=<DIR>
+checking for fabsf... yes
+checking for floorf... yes
+checking for GNU gettext support... no
+checking for GNU MP support... no
+checking for mhash support... yes
+checking whether to enable hash support... yes
+checking whether byte ordering is bigendian... (cached) no
+checking size of short... (cached) 2
+checking size of int... (cached) 4
+checking size of long... (cached) 8
+checking size of long long... (cached) 8
+checking for iconv support... yes
+checking for iconv... no
+checking for libiconv... no
+checking for libiconv in -liconv... no
+checking for iconv in -liconv... yes
+checking if iconv is glibc's... no
+checking if using GNU libiconv... 267yes
+checking if iconv supports errno... yes
+checking if iconv supports //IGNORE... yes
+checking if your cpp allows macro usage in include lines... yes
+checking for IMAP support... no
+checking for IMAP Kerberos support... no
+checking for IMAP SSL support... no
+checking for Firebird support... no
+checking whether to enable internationalization support... no
+checking whether to enable JavaScript Object Serialization support... yes
+checking for ANSI C header files... (cached) yes
+checking for LDAP support... no
+checking for LDAP Cyrus SASL support... no
+checking whether to enable multibyte string support... yes
+checking whether to enable multibyte regex support... yes
+checking whether to check multibyte regex backtrack... yes
+checking for external libmbfl... no
+checking for external oniguruma... no
+checking for variable length prototypes and stdarg.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking sys/times.h usability... yes
+checking sys/times.h presence... yes
+checking for sys/times.h... yes
+checking for stdarg.h... (cached) yes
+checking size of int... (cached) 4
+checking size of short... (cached) 2
+checking size of long... (cached) 8
+checking for an ANSI C-conforming const... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking for working memcmp... yes
+checking for stdarg.h... (cached) yes
+checking for mcrypt support... no
+checking for MySQLi support... yes
+checking whether to enable embedded MySQLi support... no
+checking for specified location of the MySQL UNIX socket... /tmp/mysql.sock
+checking for MySQL UNIX socket location... /tmp/mysql.sock
+checking for Oracle Database OCI8 support... no
+checking for Adabas support... no
+checking for SAP DB support... no
+checking for Solid support... no
+checking for IBM DB2 support... no
+checking for ODBCRouter.com support... no
+checking for Empress support... no
+checking for Empress local access support... no
+checking for Birdstep support... no
+checking for a custom ODBC support... no
+checking for iODBC support... no
+checking for Easysoft ODBC-ODBC Bridge support... no
+checking for unixODBC support... no
+checking for DBMaker support... no
+checking for any ODBC driver support... no
+checking whether to enable Zend OPcache support... yes
+checking whether to enable file based caching... yes
+checking whether to enable copying PHP CODE pages into HUGE PAGES... yes
+checking for mprotect... yes
+checking for unistd.h... (cached) yes
+checking for sys/uio.h... (cached) yes
+checking for sysvipc shared memory support... yes
+checking for mmap() using MAP_ANON shared memory support... yes
+checking for mmap() using /dev/zero shared memory support... no
+checking for mmap() using shm_open() shared memory support... yes
+checking for mmap() using regular file shared memory support... yes
+checking "whether flock struct is linux ordered"... "no"
+checking "whether flock struct is BSD ordered"... "yes"
+checking whether to enable pcntl support... no
+checking whether to enable PDO support... yes
+checking for PDO_DBLIB support via FreeTDS... no
+checking for Firebird support for PDO... no
+checking for MySQL support for PDO... yes
+checking for MySQL UNIX socket location... /tmp/mysql.sock
+checking for PDO includes... checking for PDO includes... /Users/admindyn/Desktop/php-7.0.13/ext
+checking Oracle OCI support for PDO... no
+checking for ODBC v3 support for PDO... no
+checking for PostgreSQL support for PDO... no
+checking for sqlite 3 support for PDO... yes
+checking for PDO includes... (cached) /Users/admindyn/Desktop/php-7.0.13/ext
+checking for usleep... (cached) yes
+checking for nanosleep... (cached) yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking for fdatasync in -lrt... no
+checking for PostgreSQL support... no
+checking for phar archive support... yes
+checking for phar openssl support... no
+checking whether to enable POSIX-like functions... yes
+checking sys/mkdev.h usability... no
+checking sys/mkdev.h presence... no
+checking for sys/mkdev.h... no
+checking for seteuid... yes
+checking for setegid... yes
+checking for setsid... yes
+checking for getsid... yes
+checking for setpgid... (cached) yes
+checking for getpgid... yes
+checking for ctermid... yes
+checking for mkfifo... yes
+checking for mknod... yes
+checking for setrlimit... yes
+checking for getrlimit... yes
+checking for getlogin... (cached) yes
+checking for getgroups... yes
+checking for makedev... no
+checking for initgroups... yes
+checking for getpwuid_r... (cached) yes
+checking for getgrgid_r... yes
+checking for working ttyname_r() implementation... no, posix_ttyname() will be thread-unsafe
+checking for utsname.domainname... no
+checking for PSPELL support... no
+checking for libedit readline replacement... no
+checking for readline support... no
+checking for recode support... no
+checking whether to enable PHP sessions... yes
+checking for mm support... no
+checking whether pwrite works... yes
+checking whether pread works... yes
+checking whether to enable shmop support... yes
+checking whether to enable SimpleXML support... yes
+checking for xml2-config path... (cached) /usr/bin/xml2-config
+checking whether libxml build works... (cached) yes
+checking for SNMP support... no
+checking OpenSSL dir for SNMP... no
+checking whether to enable SOAP support... yes
+checking for xml2-config path... (cached) /usr/bin/xml2-config
+checking whether libxml build works... (cached) yes
+checking whether to enable sockets support... yes
+checking for struct cmsghdr... yes
+checking for hstrerror... yes
+checking for socketpair... (cached) yes
+checking for if_nametoindex... yes
+checking for if_indextoname... yes
+checking for netdb.h... (cached) yes
+checking netinet/tcp.h usability... yes
+checking netinet/tcp.h presence... yes
+checking for netinet/tcp.h... yes
+checking sys/un.h usability... yes
+checking sys/un.h presence... yes
+checking for sys/un.h... yes
+checking sys/sockio.h usability... yes
+checking sys/sockio.h presence... yes
+checking for sys/sockio.h... yes
+checking for errno.h... (cached) yes
+checking for field ss_family in struct sockaddr_storage... yes
+checking if getaddrinfo supports AI_V4MAPPED... yes
+checking whether flush should be called explicitly after a buffered io... yes
+checking for standard DES crypt... yes
+checking for extended DES crypt... yes
+checking for MD5 crypt... no
+checking for Blowfish crypt... no
+checking for SHA512 crypt... no
+checking for SHA256 crypt... no
+checking whether the compiler supports __alignof__... yes
+checking whether the compiler supports aligned attribute... yes
+checking for getcwd... yes
+checking for getwd... yes
+checking for asinh... yes
+checking for acosh... yes
+checking for atanh... yes
+checking for log1p... yes
+checking for hypot... yes
+checking for glob... yes
+checking for strfmon... yes
+checking for nice... yes
+checking for fpclass... no
+checking for isinf... yes
+checking for isnan... yes
+checking for mempcpy... no
+checking for strpncpy... no
+checking for working POSIX fnmatch... yes
+checking for fork... yes
+checking if your OS can spawn processes with inherited handles... yes
+checking for res_nsearch... no
+checking for __res_nsearch... no
+checking for res_nsearch in -lresolv... no
+checking for __res_nsearch in -lresolv... no
+checking for res_nsearch in -lbind... no
+checking for __res_nsearch in -lbind... no
+checking for res_nsearch in -lsocket... no
+checking for __res_nsearch in -lsocket... no
+checking for dns_search... no
+checking for __dns_search... no
+checking for dns_search in -lresolv... yes
+checking for dn_expand... yes
+checking for dn_skipname... no
+checking for __dn_skipname... yes
+checking for res_search... yes
+checking whether atof() accepts NAN... yes
+checking whether atof() accepts INF... yes
+checking whether HUGE_VAL == INF... yes
+checking whether HUGE_VAL + -HUGEVAL == NAN... yes
+checking whether strptime() declaration fails... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking for mblen... yes
+checking for mbrlen... yes
+checking for mbsinit... yes
+checking for mbstate_t... yes
+checking atomic.h usability... no
+checking atomic.h presence... no
+checking for atomic.h... no
+checking whether arc4random_buf is declared... yes
+checking whether getrandom is declared... no
+checking whether to enable System V IPC support... yes
+checking sys/msg.h usability... yes
+checking sys/msg.h presence... yes
+checking for sys/msg.h... yes
+checking whether to enable System V semaphore support... yes
+checking for union semun... yes
+checking whether to enable System V shared memory support... yes
+checking for TIDY support... no
+checking whether to enable tokenizer support... yes
+checking whether to enable WDDX support... yes
+checking libexpat dir for WDDX... no
+checking for xml2-config path... (cached) /usr/bin/xml2-config
+checking whether libxml build works... (cached) yes
+checking whether to enable XML support... yes
+checking libexpat install dir... no
+checking for xml2-config path... (cached) /usr/bin/xml2-config
+checking whether libxml build works... (cached) yes
+checking whether to enable XMLReader support... yes
+checking for xml2-config path... (cached) /usr/bin/xml2-config
+checking whether libxml build works... (cached) yes
+checking for XMLRPC-EPI support... no
+checking libexpat dir for XMLRPC-EPI... no
+checking iconv dir for XMLRPC-EPI... no
+checking whether to enable XMLWriter support... yes
+checking for xml2-config path... (cached) /usr/bin/xml2-config
+checking whether libxml build works... (cached) yes
+checking for XSL support... no
+checking for zip archive read/writesupport... yes
+checking pcre install prefix... no
+checking libzip... no
+checking for the location of zlib... /usr
+checking stdbool.h usability... yes
+checking stdbool.h presence... yes
+checking for stdbool.h... yes
+checking fts.h usability... yes
+checking fts.h presence... yes
+checking for fts.h... yes
+checking for int8_t... (cached) yes
+checking for int16_t... (cached) yes
+checking for int32_t... (cached) yes
+checking for int64_t... (cached) yes
+checking for uint8_t... (cached) yes
+checking for uint16_t... (cached) yes
+checking for uint32_t... (cached) yes
+checking for uint64_t... (cached) yes
+checking for ssize_t... yes
+checking size of short... (cached) 2
+checking size of int... (cached) 4
+checking size of long... (cached) 8
+checking size of long long... (cached) 8
+checking size of off_t... 8
+checking size of size_t... (cached) 8
+checking for touch... /usr/bin/touch
+checking for unzip... /usr/bin/unzip
+checking for struct tm.tm_zone... (cached) yes
+checking whether to enable mysqlnd... yes
+checking whether to disable compressed protocol support in mysqlnd... yes
+
+Configuring PEAR
+checking whether to install PEAR... yes
+
+Configuring Zend
+checking for bison version... (cached) invalid
+configure: WARNING: This bison version is not supported for regeneration of the Zend/PHP parsers (found: none, min: 204, excluded: ).
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for limits.h... (cached) yes
+checking malloc.h usability... no
+checking malloc.h presence... no
+checking for malloc.h... no
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdarg.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for signal.h... (cached) yes
+checking for unix.h... (cached) no
+checking for stdlib.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for size_t... (cached) yes
+checking return type of signal handlers... void
+checking for uint... yes
+checking for ulong... no
+checking for int32_t... yes
+checking for uint32_t... yes
+checking for vprintf... (cached) yes
+checking for _doprnt... (cached) no
+checking for working memcmp... (cached) yes
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking for memcpy... (cached) yes
+checking for strdup... (cached) yes
+checking for getpid... yes
+checking for kill... yes
+checking for strtod... yes
+checking for strtol... yes
+checking for finite... yes
+checking for fpclass... (cached) no
+checking for sigsetjmp... yes
+checking whether sprintf is broken... no
+checking for finite... (cached) yes
+checking for isfinite... no
+checking for isinf... (cached) yes
+checking for isnan... (cached) yes
+checking whether fp_except is defined... no
+checking for usable _FPU_SETCW... no
+checking for usable fpsetprec... no
+checking for usable _controlfp... no
+checking for usable _controlfp_s... no
+checking whether FPU control word can be manipulated by inline assembler... yes
+checking whether double cast to long preserves least significant bits... no
+checking for dlfcn.h... (cached) yes
+checking whether dlsym() requires a leading underscore in symbol names... no
+checking whether to enable thread-safety... no
+checking whether to enable inline optimization for GCC... yes
+checking whether to enable Zend debugging... no
+checking for inline... inline
+checking target system is Darwin... yes
+checking for MM alignment and log values... done
+checking for memory allocation using mmap(MAP_ANON)... yes
+checking for memory allocation using mmap("/dev/zero")... no
+checking for mremap... no
+checking for sigaction... yes
+checking whether to enable zend signal handling... no
+
+Configuring TSRM
+checking for stdarg.h... (cached) yes
+checking for sigprocmask... yes
+checking how many arguments gethostbyname_r() takes... cannot find function declaration in netdb.h
+
+Configuring libtool
+checking for ld used by cc... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking how to recognize dependent libraries... pass_all
+checking the maximum length of command line arguments... 196608
+checking command to parse /usr/bin/nm -B output from cc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking for dsymutil... dsymutil
+checking for nmedit... nmedit
+checking for -single_module linker flag... yes
+checking for -exported_symbols_list linker flag... yes
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fno-common
+checking if cc PIC flag -fno-common works... yes
+checking if cc static flag -static works... no
+checking if cc supports -c -o file.o... yes
+checking whether the cc linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin16.1.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+
+creating libtool
+appending configuration tag "CXX" to libtool
+
+Generating files
+configure: creating ./config.status
+creating main/internal_functions.c
+creating main/internal_functions_cli.c
++--------------------------------------------------------------------+
+| License:                                                           |
+| This software is subject to the PHP License, available in this     |
+| distribution in the file LICENSE.  By continuing this installation |
+| process, you are bound by the terms of this license agreement.     |
+| If you do not agree with the terms of this license, you must abort |
+| the installation process at this point.                            |
++--------------------------------------------------------------------+
+
+Thank you for using PHP.
+
+config.status: creating php7.spec
+config.status: creating main/build-defs.h
+config.status: creating scripts/phpize
+config.status: creating scripts/man1/phpize.1
+config.status: creating scripts/php-config
+config.status: creating scripts/man1/php-config.1
+config.status: creating sapi/cli/php.1
+config.status: creating sapi/fpm/php-fpm.conf
+config.status: creating sapi/fpm/www.conf
+config.status: creating sapi/fpm/init.d.php-fpm
+config.status: creating sapi/fpm/php-fpm.service
+config.status: creating sapi/fpm/php-fpm.8
+config.status: creating sapi/fpm/status.html
+config.status: creating sapi/cgi/php-cgi.1
+config.status: creating ext/phar/phar.1
+config.status: creating ext/phar/phar.phar.1
+config.status: creating main/php_config.h
+config.status: executing default commands
+configure: WARNING: unrecognized options: --with-mysql
+bogon:php-7.0.13 admindyn$ 
+
+
+
+
+
+
+
+--------------configure 成功 ----------------
+
+bogon:php-7.0.13 admindyn$ sudo make install
+Password:
+Installing shared extensions:     /usr/local/phpnew/lib/php/extensions/no-debug-non-zts-20151012/
+Installing PHP CLI binary:        /usr/local/phpnew/bin/
+Installing PHP CLI man page:      /usr/local/phpnew/php/man/man1/
+Installing PHP FPM binary:        /usr/local/phpnew/sbin/
+Installing PHP FPM config:        /usr/local/phpnew/etc/
+Installing PHP FPM man page:      /usr/local/phpnew/php/man/man8/
+Installing PHP FPM status page:   /usr/local/phpnew/fpm/
+Installing phpdbg binary:         /usr/local/phpnew/bin/
+Installing phpdbg man page:       /usr/local/phpnew/php/man/man1/
+Installing PHP CGI binary:        /usr/local/phpnew/bin/
+Installing PHP CGI man page:      /usr/local/phpnew/php/man/man1/
+Installing build environment:     /usr/local/phpnew/lib/php/build/
+Installing header files:           /usr/local/phpnew/include/php/
+Installing helper programs:       /usr/local/phpnew/bin/
+  program: phpize
+  program: php-config
+Installing man pages:             /usr/local/phpnew/php/man/man1/
+  page: phpize.1
+  page: php-config.1
+Installing PEAR environment:      /usr/local/phpnew/lib/php/
+[PEAR] Archive_Tar    - installed: 1.4.0
+[PEAR] Console_Getopt - installed: 1.4.1
+[PEAR] Structures_Graph- installed: 1.1.1
+[PEAR] XML_Util       - installed: 1.3.0
+[PEAR] PEAR           - installed: 1.10.1
+Wrote PEAR system config file at: /usr/local/phpnew/etc/pear.conf
+You may want to add: /usr/local/phpnew/lib/php to your php.ini include_path
+/Users/admindyn/Desktop/php-7.0.13/build/shtool install -c ext/phar/phar.phar /usr/local/phpnew/bin
+ln -s -f phar.phar /usr/local/phpnew/bin/phar
+Installing PDO headers:           /usr/local/phpnew/include/php/ext/pdo/
+bogon:php-7.0.13 admindyn$ 
+
+-----------make install 成功 ----------------
+
+
+
+bogon:php-7.0.13 admindyn$ cd ext/
+bogon:ext admindyn$ ls -la
+total 32
+drwxr-xr-x@  77 admindyn  staff  2618 11  8 23:07 .
+drwxr-xr-x@  88 admindyn  staff  2992 11 30 16:12 ..
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:16 bcmath
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 bz2
+drwxr-xr-x@  34 admindyn  staff  1156 11 30 16:17 calendar
+drwxr-xr-x@  21 admindyn  staff   714 11  8 23:08 com_dotnet
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:17 ctype
+drwxr-xr-x@  21 admindyn  staff   714 11 30 16:17 curl
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:14 date
+drwxr-xr-x@  64 admindyn  staff  2176 11 30 16:17 dba
+drwxr-xr-x@ 110 admindyn  staff  3740 11 30 16:17 dom
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:07 enchant
+drwxr-xr-x@  15 admindyn  staff   510 11 30 16:17 exif
+-rwxr-xr-x@   1 admindyn  staff  8671 11  8 23:08 ext_skel
+-rw-r--r--@   1 admindyn  staff  1169 11  8 23:08 ext_skel_win32.php
+drwxr-xr-x@  20 admindyn  staff   680 11 30 16:17 fileinfo
+drwxr-xr-x@  22 admindyn  staff   748 11 30 16:17 filter
+drwxr-xr-x@  16 admindyn  staff   544 11 30 16:17 ftp
+drwxr-xr-x@  17 admindyn  staff   578 11 30 16:17 gd
+drwxr-xr-x@   8 admindyn  staff   272 11  8 23:08 gettext
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 gmp
+drwxr-xr-x@  67 admindyn  staff  2278 11 30 16:18 hash
+drwxr-xr-x@  22 admindyn  staff   748 11 30 16:18 iconv
+drwxr-xr-x@   9 admindyn  staff   306 11  8 23:08 imap
+drwxr-xr-x@  14 admindyn  staff   476 11  8 23:08 interbase
+drwxr-xr-x@  37 admindyn  staff  1258 11  8 23:08 intl
+drwxr-xr-x@  29 admindyn  staff   986 11 30 16:18 json
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:07 ldap
+drwxr-xr-x@  12 admindyn  staff   408 11 30 16:15 libxml
+drwxr-xr-x@  31 admindyn  staff  1054 11 30 16:19 mbstring
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 mcrypt
+drwxr-xr-x@  46 admindyn  staff  1564 11 30 16:19 mysqli
+drwxr-xr-x@  83 admindyn  staff  2822 11 30 16:22 mysqlnd
+drwxr-xr-x@  17 admindyn  staff   578 11  8 23:07 oci8
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 odbc
+drwxr-xr-x@  59 admindyn  staff  2006 11 30 16:14 opcache
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 openssl
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:08 pcntl
+drwxr-xr-x@  14 admindyn  staff   476 11 30 16:15 pcre
+drwxr-xr-x@  32 admindyn  staff  1088 11 30 16:19 pdo
+drwxr-xr-x@  13 admindyn  staff   442 11  8 23:08 pdo_dblib
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:07 pdo_firebird
+drwxr-xr-x@  21 admindyn  staff   714 11 30 16:19 pdo_mysql
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:08 pdo_oci
+drwxr-xr-x@  13 admindyn  staff   442 11  8 23:08 pdo_odbc
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:08 pdo_pgsql
+drwxr-xr-x@  19 admindyn  staff   646 11 30 16:19 pdo_sqlite
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:07 pgsql
+drwxr-xr-x@  58 admindyn  staff  1972 11 30 16:24 phar
+drwxr-xr-x@  11 admindyn  staff   374 11 30 16:19 posix
+drwxr-xr-x@   9 admindyn  staff   306 11  8 23:07 pspell
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:08 readline
+drwxr-xr-x@   8 admindyn  staff   272 11  8 23:08 recode
+drwxr-xr-x@  11 admindyn  staff   374 11 30 16:20 reflection
+drwxr-xr-x@  29 admindyn  staff   986 11 30 16:20 session
+drwxr-xr-x@  14 admindyn  staff   476 11 30 16:20 shmop
+drwxr-xr-x@  18 admindyn  staff   612 11 30 16:20 simplexml
+drwxr-xr-x@   9 admindyn  staff   306 11  8 23:08 skeleton
+drwxr-xr-x@   8 admindyn  staff   272 11  8 23:08 snmp
+drwxr-xr-x@  39 admindyn  staff  1326 11 30 16:20 soap
+drwxr-xr-x@  31 admindyn  staff  1054 11 30 16:20 sockets
+drwxr-xr-x@  58 admindyn  staff  1972 11 30 16:20 spl
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:15 sqlite3
+drwxr-xr-x@ 280 admindyn  staff  9520 11 30 16:21 standard
+drwxr-xr-x@  11 admindyn  staff   374 11 30 16:21 sysvmsg
+drwxr-xr-x@  11 admindyn  staff   374 11 30 16:21 sysvsem
+drwxr-xr-x@  12 admindyn  staff   408 11 30 16:21 sysvshm
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:08 tidy
+drwxr-xr-x@  18 admindyn  staff   612 11 30 16:21 tokenizer
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:21 wddx
+drwxr-xr-x@  17 admindyn  staff   578 11 30 16:21 xml
+drwxr-xr-x@  15 admindyn  staff   510 11 30 16:21 xmlreader
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:08 xmlrpc
+drwxr-xr-x@  15 admindyn  staff   510 11 30 16:21 xmlwriter
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:07 xsl
+drwxr-xr-x@  18 admindyn  staff   612 11 30 16:21 zip
+drwxr-xr-x@  13 admindyn  staff   442 11  8 23:08 zlib
+bogon:ext admindyn$ cd mcrypt/
+bogon:mcrypt admindyn$ ls -la
+total 152
+drwxr-xr-x@ 11 admindyn  staff    374 11  8 23:08 .
+drwxr-xr-x@ 77 admindyn  staff   2618 11  8 23:07 ..
+-rw-r--r--@  1 admindyn  staff     39 11  8 23:08 CREDITS
+-rw-r--r--@  1 admindyn  staff    107 11  8 23:08 TODO
+-rw-r--r--@  1 admindyn  staff   1466 11  8 23:08 config.m4
+-rw-r--r--@  1 admindyn  staff    518 11  8 23:08 config.w32
+-rw-r--r--@  1 admindyn  staff  39407 11  8 23:08 mcrypt.c
+-rw-r--r--@  1 admindyn  staff   8566 11  8 23:08 mcrypt_filter.c
+-rw-r--r--@  1 admindyn  staff   3286 11  8 23:08 php_mcrypt.h
+-rw-r--r--@  1 admindyn  staff   1498 11  8 23:08 php_mcrypt_filter.h
+drwxr-xr-x@ 66 admindyn  staff   2244 11  8 23:08 tests
+bogon:mcrypt admindyn$ /usr/local/phpnew/bin/phpize 
+Configuring for:
+PHP Api Version:         20151012
+Zend Module Api No:      20151012
+Zend Extension Api No:   320151012
+bogon:mcrypt admindyn$ ./configure  --with-php-config=/usr/local/phpnew/bin/php-config 
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cc -E
+checking for icc... no
+checking for suncc... no
+checking whether cc understands -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-apple-darwin16.1.0
+checking host system type... x86_64-apple-darwin16.1.0
+checking target system type... x86_64-apple-darwin16.1.0
+checking for PHP prefix... /usr/local/phpnew
+checking for PHP includes... -I/usr/local/phpnew/include/php -I/usr/local/phpnew/include/php/main -I/usr/local/phpnew/include/php/TSRM -I/usr/local/phpnew/include/php/Zend -I/usr/local/phpnew/include/php/ext -I/usr/local/phpnew/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/phpnew/lib/php/extensions/no-debug-non-zts-20151012
+checking for PHP installed headers prefix... /usr/local/phpnew/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.15.3 (ok)
+checking for gawk... no
+checking for nawk... no
+checking for awk... awk
+checking if awk is broken... no
+checking for mcrypt support... yes, shared
+configure: error: mcrypt.h not found. Please reinstall libmcrypt.
+bogon:mcrypt admindyn$ cd ../
+bogon:ext admindyn$ ls -la
+total 32
+drwxr-xr-x@  77 admindyn  staff  2618 11  8 23:07 .
+drwxr-xr-x@  88 admindyn  staff  2992 11 30 16:12 ..
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:16 bcmath
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 bz2
+drwxr-xr-x@  34 admindyn  staff  1156 11 30 16:17 calendar
+drwxr-xr-x@  21 admindyn  staff   714 11  8 23:08 com_dotnet
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:17 ctype
+drwxr-xr-x@  21 admindyn  staff   714 11 30 16:17 curl
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:14 date
+drwxr-xr-x@  64 admindyn  staff  2176 11 30 16:17 dba
+drwxr-xr-x@ 110 admindyn  staff  3740 11 30 16:17 dom
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:07 enchant
+drwxr-xr-x@  15 admindyn  staff   510 11 30 16:17 exif
+-rwxr-xr-x@   1 admindyn  staff  8671 11  8 23:08 ext_skel
+-rw-r--r--@   1 admindyn  staff  1169 11  8 23:08 ext_skel_win32.php
+drwxr-xr-x@  20 admindyn  staff   680 11 30 16:17 fileinfo
+drwxr-xr-x@  22 admindyn  staff   748 11 30 16:17 filter
+drwxr-xr-x@  16 admindyn  staff   544 11 30 16:17 ftp
+drwxr-xr-x@  17 admindyn  staff   578 11 30 16:17 gd
+drwxr-xr-x@   8 admindyn  staff   272 11  8 23:08 gettext
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 gmp
+drwxr-xr-x@  67 admindyn  staff  2278 11 30 16:18 hash
+drwxr-xr-x@  22 admindyn  staff   748 11 30 16:18 iconv
+drwxr-xr-x@   9 admindyn  staff   306 11  8 23:08 imap
+drwxr-xr-x@  14 admindyn  staff   476 11  8 23:08 interbase
+drwxr-xr-x@  37 admindyn  staff  1258 11  8 23:08 intl
+drwxr-xr-x@  29 admindyn  staff   986 11 30 16:18 json
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:07 ldap
+drwxr-xr-x@  12 admindyn  staff   408 11 30 16:15 libxml
+drwxr-xr-x@  31 admindyn  staff  1054 11 30 16:19 mbstring
+drwxr-xr-x@  31 admindyn  staff  1054 11 30 16:46 mcrypt
+drwxr-xr-x@  46 admindyn  staff  1564 11 30 16:19 mysqli
+drwxr-xr-x@  83 admindyn  staff  2822 11 30 16:22 mysqlnd
+drwxr-xr-x@  17 admindyn  staff   578 11  8 23:07 oci8
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 odbc
+drwxr-xr-x@  59 admindyn  staff  2006 11 30 16:14 opcache
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:08 openssl
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:08 pcntl
+drwxr-xr-x@  14 admindyn  staff   476 11 30 16:15 pcre
+drwxr-xr-x@  32 admindyn  staff  1088 11 30 16:19 pdo
+drwxr-xr-x@  13 admindyn  staff   442 11  8 23:08 pdo_dblib
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:07 pdo_firebird
+drwxr-xr-x@  21 admindyn  staff   714 11 30 16:19 pdo_mysql
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:08 pdo_oci
+drwxr-xr-x@  13 admindyn  staff   442 11  8 23:08 pdo_odbc
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:08 pdo_pgsql
+drwxr-xr-x@  19 admindyn  staff   646 11 30 16:19 pdo_sqlite
+drwxr-xr-x@  11 admindyn  staff   374 11  8 23:07 pgsql
+drwxr-xr-x@  58 admindyn  staff  1972 11 30 16:24 phar
+drwxr-xr-x@  11 admindyn  staff   374 11 30 16:19 posix
+drwxr-xr-x@   9 admindyn  staff   306 11  8 23:07 pspell
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:08 readline
+drwxr-xr-x@   8 admindyn  staff   272 11  8 23:08 recode
+drwxr-xr-x@  11 admindyn  staff   374 11 30 16:20 reflection
+drwxr-xr-x@  29 admindyn  staff   986 11 30 16:20 session
+drwxr-xr-x@  14 admindyn  staff   476 11 30 16:20 shmop
+drwxr-xr-x@  18 admindyn  staff   612 11 30 16:20 simplexml
+drwxr-xr-x@   9 admindyn  staff   306 11  8 23:08 skeleton
+drwxr-xr-x@   8 admindyn  staff   272 11  8 23:08 snmp
+drwxr-xr-x@  39 admindyn  staff  1326 11 30 16:20 soap
+drwxr-xr-x@  31 admindyn  staff  1054 11 30 16:20 sockets
+drwxr-xr-x@  58 admindyn  staff  1972 11 30 16:20 spl
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:15 sqlite3
+drwxr-xr-x@ 280 admindyn  staff  9520 11 30 16:21 standard
+drwxr-xr-x@  11 admindyn  staff   374 11 30 16:21 sysvmsg
+drwxr-xr-x@  11 admindyn  staff   374 11 30 16:21 sysvsem
+drwxr-xr-x@  12 admindyn  staff   408 11 30 16:21 sysvshm
+drwxr-xr-x@  12 admindyn  staff   408 11  8 23:08 tidy
+drwxr-xr-x@  18 admindyn  staff   612 11 30 16:21 tokenizer
+drwxr-xr-x@  13 admindyn  staff   442 11 30 16:21 wddx
+drwxr-xr-x@  17 admindyn  staff   578 11 30 16:21 xml
+drwxr-xr-x@  15 admindyn  staff   510 11 30 16:21 xmlreader
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:08 xmlrpc
+drwxr-xr-x@  15 admindyn  staff   510 11 30 16:21 xmlwriter
+drwxr-xr-x@  10 admindyn  staff   340 11  8 23:07 xsl
+drwxr-xr-x@  18 admindyn  staff   612 11 30 16:21 zip
+drwxr-xr-x@  13 admindyn  staff   442 11  8 23:08 zlib
+bogon:ext admindyn$ cd mysql
+-bash: cd: mysql: No such file or directory
+bogon:ext admindyn$ cd mcrypt/
+bogon:mcrypt admindyn$ ls -la
+total 2608
+drwxr-xr-x@ 31 admindyn  staff    1054 11 30 16:46 .
+drwxr-xr-x@ 77 admindyn  staff    2618 11  8 23:07 ..
+-rw-r--r--@  1 admindyn  staff      39 11  8 23:08 CREDITS
+-rw-r--r--   1 admindyn  staff       0 11 30 16:46 Makefile.fragments
+-rw-r--r--@  1 admindyn  staff    7237 11 30 16:45 Makefile.global
+-rw-r--r--   1 admindyn  staff       0 11 30 16:46 Makefile.objects
+-rw-r--r--@  1 admindyn  staff     107 11  8 23:08 TODO
+-rw-r--r--@  1 admindyn  staff   82329 11 30 16:45 acinclude.m4
+-rw-r--r--   1 admindyn  staff  312706 11 30 16:45 aclocal.m4
+drwxr-xr-x   5 admindyn  staff     170 11 30 16:45 autom4te.cache
+drwxr-xr-x   6 admindyn  staff     204 11 30 16:45 build
+-rwxr-xr-x@  1 admindyn  staff   42938 11 30 16:45 config.guess
+-rw-r--r--   1 admindyn  staff    1631 11 30 16:45 config.h.in
+-rw-r--r--   1 admindyn  staff   11352 11 30 16:46 config.log
+-rw-r--r--@  1 admindyn  staff    1466 11  8 23:08 config.m4
+-rwxr-xr-x   1 admindyn  staff     113 11 30 16:46 config.nice
+-rwxr-xr-x@  1 admindyn  staff   35987 11 30 16:45 config.sub
+-rw-r--r--@  1 admindyn  staff     518 11  8 23:08 config.w32
+-rwxr-xr-x   1 admindyn  staff  448049 11 30 16:45 configure
+-rw-r--r--   1 admindyn  staff    4698 11 30 16:45 configure.in
+drwxr-xr-x   2 admindyn  staff      68 11 30 16:46 include
+-rw-r--r--   1 admindyn  staff       0 11 30 16:45 install-sh
+-rw-r--r--@  1 admindyn  staff  199728 11 30 16:45 ltmain.sh
+-rw-r--r--@  1 admindyn  staff   39407 11  8 23:08 mcrypt.c
+-rw-r--r--@  1 admindyn  staff    8566 11  8 23:08 mcrypt_filter.c
+-rw-r--r--   1 admindyn  staff       0 11 30 16:45 missing
+-rw-r--r--   1 admindyn  staff       0 11 30 16:45 mkinstalldirs
+-rw-r--r--@  1 admindyn  staff    3286 11  8 23:08 php_mcrypt.h
+-rw-r--r--@  1 admindyn  staff    1498 11  8 23:08 php_mcrypt_filter.h
+-rw-r--r--@  1 admindyn  staff   83099 11 30 16:45 run-tests.php
+drwxr-xr-x@ 66 admindyn  staff    2244 11  8 23:08 tests
+bogon:mcrypt admindyn$ ./configure  --with-php-config=/usr/local/phpnew/bin/php-config 
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cc -E
+checking for icc... no
+checking for suncc... no
+checking whether cc understands -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-apple-darwin16.1.0
+checking host system type... x86_64-apple-darwin16.1.0
+checking target system type... x86_64-apple-darwin16.1.0
+checking for PHP prefix... /usr/local/phpnew
+checking for PHP includes... -I/usr/local/phpnew/include/php -I/usr/local/phpnew/include/php/main -I/usr/local/phpnew/include/php/TSRM -I/usr/local/phpnew/include/php/Zend -I/usr/local/phpnew/include/php/ext -I/usr/local/phpnew/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/phpnew/lib/php/extensions/no-debug-non-zts-20151012
+checking for PHP installed headers prefix... /usr/local/phpnew/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.15.3 (ok)
+checking for gawk... no
+checking for nawk... no
+checking for awk... awk
+checking if awk is broken... no
+checking for mcrypt support... yes, shared
+configure: error: mcrypt.h not found. Please reinstall libmcrypt.
+bogon:mcrypt admindyn$ brew install libmcrypt
+==> Installing dependencies for mcrypt: mhash
+==> Installing mcrypt dependency: mhash
+==> Downloading https://homebrew.bintray.com/bottles/mhash-0.9.9.9.sierra.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring mhash-0.9.9.9.sierra.bottle.tar.gz
+🍺  /usr/local/Cellar/mhash/0.9.9.9: 19 files, 453.2K
+==> Installing mcrypt
+==> Downloading https://homebrew.bintray.com/bottles/mcrypt-2.6.8.sierra.bottle.1.tar.gz
+######################################################################## 100.0%
+==> Pouring mcrypt-2.6.8.sierra.bottle.1.tar.gz
+🍺  /usr/local/Cellar/mcrypt/2.6.8: 18 files, 380.8K
+bogon:mcrypt admindyn$ 
+bogon:mcrypt admindyn$ ./configure  --with-php-config=/usr/local/phpnew/bin/php-config 
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cc -E
+checking for icc... no
+checking for suncc... no
+checking whether cc understands -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-apple-darwin16.1.0
+checking host system type... x86_64-apple-darwin16.1.0
+checking target system type... x86_64-apple-darwin16.1.0
+checking for PHP prefix... /usr/local/phpnew
+checking for PHP includes... -I/usr/local/phpnew/include/php -I/usr/local/phpnew/include/php/main -I/usr/local/phpnew/include/php/TSRM -I/usr/local/phpnew/include/php/Zend -I/usr/local/phpnew/include/php/ext -I/usr/local/phpnew/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/phpnew/lib/php/extensions/no-debug-non-zts-20151012
+checking for PHP installed headers prefix... /usr/local/phpnew/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.15.3 (ok)
+checking for gawk... no
+checking for nawk... no
+checking for awk... awk
+checking if awk is broken... no
+checking for mcrypt support... yes, shared
+checking for libmcrypt version... >= 2.5.6
+checking for mcrypt_module_open in -lmcrypt... yes
+checking for ld used by cc... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognize dependent libraries... pass_all
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking the maximum length of command line arguments... 196608
+checking command to parse /usr/bin/nm -B output from cc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking for dsymutil... dsymutil
+checking for nmedit... nmedit
+checking for -single_module linker flag... yes
+checking for -exported_symbols_list linker flag... yes
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fno-common
+checking if cc PIC flag -fno-common works... yes
+checking if cc static flag -static works... no
+checking if cc supports -c -o file.o... yes
+checking whether the cc linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin16.1.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+
+creating libtool
+appending configuration tag "CXX" to libtool
+configure: creating ./config.status
+config.status: creating config.h
+bogon:mcrypt admindyn$ make 
+/bin/sh /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/libtool --mode=compile cc -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -DPHP_ATOM_INC -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/include -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/main -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -I/usr/local/phpnew/include/php -I/usr/local/phpnew/include/php/main -I/usr/local/phpnew/include/php/TSRM -I/usr/local/phpnew/include/php/Zend -I/usr/local/phpnew/include/php/ext -I/usr/local/phpnew/include/php/ext/date/lib -I/usr/local/include  -DHAVE_CONFIG_H  -g -O2   -c /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/mcrypt.c -o mcrypt.lo 
+mkdir .libs
+ cc -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -DPHP_ATOM_INC -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/include -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/main -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -I/usr/local/phpnew/include/php -I/usr/local/phpnew/include/php/main -I/usr/local/phpnew/include/php/TSRM -I/usr/local/phpnew/include/php/Zend -I/usr/local/phpnew/include/php/ext -I/usr/local/phpnew/include/php/ext/date/lib -I/usr/local/include -DHAVE_CONFIG_H -g -O2 -c /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/mcrypt.c  -fno-common -DPIC -o .libs/mcrypt.o
+/bin/sh /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/libtool --mode=compile cc -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -DPHP_ATOM_INC -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/include -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/main -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -I/usr/local/phpnew/include/php -I/usr/local/phpnew/include/php/main -I/usr/local/phpnew/include/php/TSRM -I/usr/local/phpnew/include/php/Zend -I/usr/local/phpnew/include/php/ext -I/usr/local/phpnew/include/php/ext/date/lib -I/usr/local/include  -DHAVE_CONFIG_H  -g -O2   -c /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/mcrypt_filter.c -o mcrypt_filter.lo 
+ cc -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -DPHP_ATOM_INC -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/include -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/main -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -I/usr/local/phpnew/include/php -I/usr/local/phpnew/include/php/main -I/usr/local/phpnew/include/php/TSRM -I/usr/local/phpnew/include/php/Zend -I/usr/local/phpnew/include/php/ext -I/usr/local/phpnew/include/php/ext/date/lib -I/usr/local/include -DHAVE_CONFIG_H -g -O2 -c /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/mcrypt_filter.c  -fno-common -DPIC -o .libs/mcrypt_filter.o
+/bin/sh /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/libtool --mode=link cc -DPHP_ATOM_INC -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/include -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/main -I/Users/admindyn/Desktop/php-7.0.13/ext/mcrypt -I/usr/local/phpnew/include/php -I/usr/local/phpnew/include/php/main -I/usr/local/phpnew/include/php/TSRM -I/usr/local/phpnew/include/php/Zend -I/usr/local/phpnew/include/php/ext -I/usr/local/phpnew/include/php/ext/date/lib -I/usr/local/include  -DHAVE_CONFIG_H  -g -O2   -o mcrypt.la -export-dynamic -avoid-version -prefer-pic -module -rpath /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules  mcrypt.lo mcrypt_filter.lo -Wl,-rpath,/usr/local/lib -L/usr/local/lib -lmcrypt -lltdl
+cc ${wl}-flat_namespace ${wl}-undefined ${wl}suppress -o .libs/mcrypt.so -bundle  .libs/mcrypt.o .libs/mcrypt_filter.o  -L/usr/local/lib -lmcrypt -lltdl  -Wl,-rpath -Wl,/usr/local/lib
+dsymutil .libs/mcrypt.so || :
+creating mcrypt.la
+(cd .libs && rm -f mcrypt.la && ln -s ../mcrypt.la mcrypt.la)
+/bin/sh /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/libtool --mode=install cp ./mcrypt.la /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules
+cp ./.libs/mcrypt.so /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules/mcrypt.so
+cp ./.libs/mcrypt.lai /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules/mcrypt.la
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `DYLD_LIBRARY_PATH' environment variable
+     during execution
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+
+Build complete.
+Don't forget to run 'make test'.
+
+bogon:mcrypt admindyn$ make install-sh 
+make: Nothing to be done for `install-sh'.
+bogon:mcrypt admindyn$ make install
+Installing shared extensions:     /usr/local/phpnew/lib/php/extensions/no-debug-non-zts-20151012/
+cp: /usr/local/phpnew/lib/php/extensions/no-debug-non-zts-20151012/#INST@95150#: Permission denied
+make: *** [install-modules] Error 1
+bogon:mcrypt admindyn$ sudo make install
+Password:
+/bin/sh /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/libtool --mode=install cp ./mcrypt.la /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules
+cp ./.libs/mcrypt.so /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules/mcrypt.so
+cp ./.libs/mcrypt.lai /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules/mcrypt.la
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /Users/admindyn/Desktop/php-7.0.13/ext/mcrypt/modules
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `DYLD_LIBRARY_PATH' environment variable
+     during execution
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+Installing shared extensions:     /usr/local/phpnew/lib/php/extensions/no-debug-non-zts-20151012/
+bogon:mcrypt admindyn$ 
+
+
+
+
+-------缺少的扩展 安装成功------------
+
+
+bogon:galaxy admindyn$ php init
+Yii Application Initialization Tool v1.0
+
+Which environment do you want the application to be initialized in?
+
+  [0] Development
+  [1] Production
+
+  Your choice [0-1, or "q" to quit] 0
+
+  Initialize the application under 'Development' environment? [yes|no] y
+
+  Start initialization ...
+
+   generate backend/config/main-local.php
+   generate backend/config/params-local.php
+   generate backend/web/index-test.php
+   generate backend/web/index.php
+   generate common/config/main-local.php
+   generate common/config/params-local.php
+   generate console/config/main-local.php
+   generate console/config/params-local.php
+   generate frontend/config/main-local.php
+   generate frontend/config/params-local.php
+   generate frontend/web/index-test.php
+   generate frontend/web/index.php
+   generate yii
+   generate cookie validation key in backend/config/main-local.php
+   generate cookie validation key in frontend/config/main-local.php
+      chmod 0777 backend/runtime
+      chmod 0777 backend/web/assets
+      chmod 0777 frontend/runtime
+      chmod 0777 frontend/web/assets
+      chmod 0755 yii
+
+  ... initialization completed.
+
+bogon:galaxy admindyn$ 
+
+
+
+-----------可以正常安装我们要测试的yii工程-------------

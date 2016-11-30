@@ -1,0 +1,337 @@
+记录how to install yii
+
+https://github.com/funson86/yii2-advanced-funson86商城
+
+
+第一  拿到galaxy源码 
+到 源码 目录下 
+
+第二 本地 安装 composer 命令
+bogon:galaxy admindyn$ curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+Downloading 1.2.2...
+
+第三 使用composer命令 安装 yii 框架
+
+ composer create-project --stability=dev funson86/yii2-advanced-funson86 yii2-advanced
+You are running composer with xdebug enabled. This has a major impact on runtime performance. See https://getcomposer.org/xdebug
+Installing funson86/yii2-advanced-funson86 (dev-master 6e927254ff14a87b7872dba7615ed7144ad1f4bb)
+  - Installing funson86/yii2-advanced-funson86 (dev-master master)
+    Cloning master from cache
+
+Created project in yii2-advanced
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Installing yiisoft/yii2-composer (dev-master e882cc3)   
+    Cloning e882cc327a6935a41f2e8665b9ef0317f6852d4d from cache
+
+  - Installing bower-asset/jquery (2.2.4)
+    Downloading: 100%         
+
+  - Installing ezyang/htmlpurifier (v4.8.0)
+    Downloading: 100%         
+
+  - Installing bower-asset/yii2-pjax (v2.0.6)
+    Downloading: 100%         
+
+  - Installing bower-asset/punycode (v1.3.2)
+    Downloading: 100%         
+
+  - Installing bower-asset/jquery.inputmask (3.2.7)
+    Downloading: 100%         
+
+  - Installing cebe/markdown (dev-master 2c368a9)
+    Cloning 2c368a9329cde1fdaac30b75d74e20b5c85f70a8 from cache
+
+  - Installing yiisoft/yii2 (dev-master ffb27dc)
+    Cloning ffb27dc564d636880b412bf2d2e6ad08b8db386e from cache
+
+  - Installing bower-asset/bootstrap (v3.3.7)
+    Downloading: 100%         
+
+  - Installing yiisoft/yii2-bootstrap (dev-master 28b8bbc)
+    Cloning 28b8bbc752d78e255541b17dcc6ac4a155a2f693 from cache
+
+  - Installing swiftmailer/swiftmailer (5.x-dev 12a6329)
+    Cloning 12a6329c24d08fb97bcf10128365757f845dc140 from cache
+
+  - Installing yiisoft/yii2-swiftmailer (dev-master decd3ea)
+    Cloning decd3ea203b8c4e682068e656dc23f4a32f13b4f from cache
+
+  - Installing rubaxa/fileapi (dev-master 5fc1013)
+    Cloning 5fc1013e103bb0931f5fbd18f15a9194ddf573d4 from cache
+
+  - Installing phpspec/php-diff (dev-master 0464787)
+    Cloning 0464787bfa7cd13576c5a1e318709768798bec6a from cache
+
+  - Installing vova07/yii2-fileapi-widget (dev-master a392ab7)
+    Cloning a392ab7d9c6fb429b28e1ce5a04b4d1cfd75cf89 from cache
+
+  - Installing yiisoft/yii2-codeception (dev-master 76fdd68)
+    Cloning 76fdd689b7ec49c3c57db6137ae5ea536fa8f16d from cache
+
+  - Installing yiisoft/yii2-debug (dev-master 983a042)
+    Cloning 983a042e4ccc05df4362295c407013834f10d5ae from cache
+
+  - Installing bower-asset/typeahead.js (v0.11.1)
+    Downloading: 100%         
+
+  - Installing yiisoft/yii2-gii (dev-master b5f5835)
+    Cloning b5f5835bee96f03aa227640bdcc5d7d073870edc from cache
+
+  - Installing fzaninotto/faker (dev-master 9722bbe)
+    Cloning 9722bbea1029082af5f518665c04980efe585590 from cache
+
+  - Installing yiisoft/yii2-faker (dev-master 6e6eb43)
+    Cloning 6e6eb430809e3f9c05e367303909a05a4912d4c0 from cache
+
+  - Installing funson86/yii2-auth (dev-master ee75836)
+    Cloning ee758366d98cc148aef0cb24b172d6291baa0e76 from cache
+
+  - Installing funson86/yii2-setting (dev-master 16ffd65)
+    Cloning 16ffd652e376a688718f465c090db461a1e1a8a0 from cache
+
+  - Installing funson86/yii2-gii (dev-master 6b5dc5e)
+    Cloning 6b5dc5e63fdc107ed0cd8647162d127909188543 from cache
+
+Package rubaxa/fileapi is abandoned, you should avoid using it. No replacement was suggested.
+Package yiisoft/yii2-codeception is abandoned, you should avoid using it. Use codeception/codeception instead.
+Writing lock file
+Generating autoload files
+Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]? y
+bogon:php工作目录 admindyn$ 
+
+
+第四 上面 将yii框架 和 项目源码 下载成功
+接下来 在使用之前 还需要php init
+
+bogon:galaxy admindyn$ php init
+Yii Application Initialization Tool v1.0
+
+Which environment do you want the application to be initialized in?
+
+  [0] Development
+  [1] Production
+
+  Your choice [0-1, or "q" to quit] 0
+
+  Initialize the application under 'Development' environment? [yes|no] y
+
+  Start initialization ...
+
+   generate backend/config/main-local.php
+   generate backend/config/params-local.php
+   generate backend/web/index-test.php
+   generate backend/web/index.php
+   generate common/config/main-local.php
+   generate common/config/params-local.php
+   generate console/config/main-local.php
+   generate console/config/params-local.php
+   generate frontend/config/main-local.php
+   generate frontend/config/params-local.php
+   generate frontend/web/index-test.php
+   generate frontend/web/index.php
+   generate yii
+   generate cookie validation key in backend/config/main-local.php
+   generate cookie validation key in frontend/config/main-local.php
+      chmod 0777 backend/runtime
+      chmod 0777 backend/web/assets
+      chmod 0777 frontend/runtime
+      chmod 0777 frontend/web/assets
+      chmod 0755 yii
+
+  ... initialization completed.
+
+bogon:galaxy admindyn$ 
+
+----------++++++++++++++------------
+
+
+第五：
+
+
+--------------------------------------------
+-------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++
+
+https://github.com/funson86/yii2-advanced-funson86
+
+
+
+Run the following command: php composer.phar create-project --stability=dev funson86/yii2-advanced-funson86 yii2-advanced to install Yii2-Advanced-funson86.
+Run command: cd /my/path/to/yii2-advanced/ and go to main application directory.
+Run command: php requirements.php and check the requirements.
+Run command: php init to initialize the application with a specific environment.
+
+
+
+
+Create a new database and adjust it configuration in common/config/main-local.php accordingly.
+
+
+
+Run command: yii migrate to apply migrations with console commands:
+m140608_201405_user_init : user table
+Run commond: yii migrate --migrationPath=@funson86/auth/migrations to apply https://github.com/funson86/yii2-auth
+This will create tables needed for the application to work.
+You also can use database dump from my/path/to/yii2-advanced/tests/yii2-advanced-funson86.sql, but however I recommend to use migrations.
+You also can download from http://pan.baidu.com/s/1kT6FsoB, and the sql file is in the root path.
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------
+Changed current directory to /Users/admindyn/.composer
+You are running composer with xdebug enabled. This has a major impact on runtime performance. See https://getcomposer.org/xdebug
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Nothing to install or update
+Generating autoload files
+
+
+
+bogon:galaxy admindyn$ composer require yiisoft/yii2
+
+安装时 竟然需要token  和 github 还有关系 我使用的github账号 15110671453@163.com
+token记录 92d452b3d9c9b94513a7e73ff3e4bb967b4fb343 
+
+成功
+--------------------------
+
+
+bogon:galaxy admindyn$ composer  create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
+You are running composer with xdebug enabled. This has a major impact on runtime performance. See https://getcomposer.org/xdebug
+Installing yiisoft/yii2-app-basic (dev-master b3e97d79406ae1b74dc66acbbf76d516fb8d81a2)
+  - Installing yiisoft/yii2-app-basic (dev-master master)
+    Downloading: 100%         
+
+Created project in basic
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - yiisoft/yii2 2.0.x-dev requires bower-asset/jquery.inputmask ~3.2.2 -> no matching package found.
+    - yiisoft/yii2 2.0.9 requires bower-asset/jquery 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable -> no matching package found.
+    - yiisoft/yii2 2.0.8 requires bower-asset/jquery 2.2.*@stable | 2.1.*@stable | 1.11.*@stable -> no matching package found.
+    - yiisoft/yii2 2.0.7 requires bower-asset/jquery 2.2.*@stable | 2.1.*@stable | 1.11.*@stable -> no matching package found.
+    - yiisoft/yii2 2.0.6 requires bower-asset/jquery 2.1.*@stable | 1.11.*@stable -> no matching package found.
+    - yiisoft/yii2 2.0.5 requires bower-asset/jquery 2.1.*@stable | 1.11.*@stable -> no matching package found.
+    - yiisoft/yii2 2.0.10 requires bower-asset/jquery 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable -> no matching package found.
+    - Installation request for yiisoft/yii2 ~2.0.5 -> satisfiable by yiisoft/yii2[2.0.10, 2.0.5, 2.0.6, 2.0.7, 2.0.8, 2.0.9, 2.0.x-dev].
+
+Potential causes:
+ - A typo in the package name
+ - The package is not available in a stable-enough version according to your minimum-stability setting
+   see <https://getcomposer.org/doc/04-schema.md#minimum-stability> for more details.
+
+Read <https://getcomposer.org/doc/articles/troubleshooting.md> for further common problems.
+bogon:galaxy admindyn$ 
+
+
+
+
+第四 php init 命令 安装 galaxy 
+
+
+
+Composer successfully installed to: /Users/admindyn/Desktop/php工作目录/galaxy/composer.phar
+Use it: php composer.phar
+Some settings on your machine may cause stability issues with Composer.
+If you encounter issues, try to change the following:
+
+The xdebug extension is loaded, this can slow down Composer a little.
+Disabling it when using Composer is recommended.
+
+bogon:galaxy admindyn$ mv composer.phar /usr/local/bin/composer
+
+Last login: Wed Nov 30 08:58:39 on ttys000
+bogon:~ admindyn$ cd /Users/admindyn/Desktop/php工作目录 
+bogon:php工作目录 admindyn$ cd galaxy/
+bogon:galaxy admindyn$ ls -la
+total 320
+drwxr-xr-x  27 admindyn  staff     918 11 30 10:32 .
+drwxr-xr-x@  5 admindyn  staff     170 11 30 10:33 ..
+drwxr-xr-x   9 admindyn  staff     306 11 30 10:40 .idea
+-rwxr-xr-x@  1 admindyn  staff    1076  7 15  2015 LICENSE
+-rwxr-xr-x@  1 admindyn  staff    1622  7 15  2015 LICENSE.md
+-rwxr-xr-x@  1 admindyn  staff    4658  7 15  2015 README.md
+drwxr-xr-x@  4 admindyn  staff     136  7 15  2015 common
+-rwxr-xr-x@  1 admindyn  staff    1894  7 15  2015 composer.json
+-rwxr-xr-x@  1 admindyn  staff  117591  7 15  2015 composer.lock
+drwxr-xr-x@  7 admindyn  staff     238  7 15  2015 console
+drwxr-xr-x@  5 admindyn  staff     170  7 15  2015 environments
+-rwxr-xr-x@  1 admindyn  staff    5939  7 15  2015 init
+-rwxr-xr-x@  1 admindyn  staff     511  7 15  2015 init.bat
+-rwxr-xr-x@  1 admindyn  staff    5051  7 15  2015 requirements.php
+drwxr-xr-x@ 11 admindyn  staff     374  7 15  2015 star-api
+drwxr-xr-x@  3 admindyn  staff     102  7 15  2015 star-bank
+drwxr-xr-x@ 11 admindyn  staff     374  7 15  2015 star-citizen
+drwxr-xr-x@ 11 admindyn  staff     374  7 15  2015 star-cluster
+drwxr-xr-x@ 10 admindyn  staff     340  7 15  2015 star-core
+drwxr-xr-x@ 12 admindyn  staff     408  7 15  2015 star-home
+drwxr-xr-x@  8 admindyn  staff     272  7 15  2015 star-matter
+drwxr-xr-x@ 12 admindyn  staff     408  7 15  2015 star-merchant
+drwxr-xr-x@ 16 admindyn  staff     544  7 15  2015 star-modules
+drwxr-xr-x@  6 admindyn  staff     204  7 15  2015 star-themes
+drwxr-xr-x@ 10 admindyn  staff     340  7 15  2015 star-wechat
+drwxr-xr-x@  5 admindyn  staff     170  7 15  2015 tests
+-rwxr-xr-x@  1 admindyn  staff     515  7 15  2015 yii.bat
+bogon:galaxy admindyn$ php init
+Yii Application Initialization Tool v1.0
+
+Which environment do you want the application to be initialized in?
+
+  [0] Development
+  [1] Production
+
+  Your choice [0-1, or "q" to quit] 0
+
+  Initialize the application under 'Development' environment? [yes|no] y
+
+  Start initialization ...
+
+   generate common/config/main-local.php
+   generate common/config/params-local.php
+   generate console/config/main-local.php
+   generate console/config/params-local.php
+   generate star-cluster/config/main-local.php
+   generate star-cluster/config/params-local.php
+   generate star-cluster/web/index-test.php
+   generate star-cluster/web/index.php
+   generate star-core/config/main-local.php
+   generate star-core/config/params-local.php
+   generate star-core/web/index-test.php
+   generate star-core/web/index.php
+   generate star-home/config/main-local.php
+   generate star-home/config/params-local.php
+   generate star-home/web/index-test.php
+   generate star-home/web/index.php
+   generate yii
+   generate cookie validation key in star-cluster/config/main-local.php
+   generate cookie validation key in star-core/config/main-local.php
+   generate cookie validation key in star-home/config/main-local.php
+      chmod 0777 star-cluster/runtime
+      chmod 0777 star-cluster/web/assets
+      chmod 0777 star-core/runtime
+      chmod 0777 star-core/web/assets
+      chmod 0777 star-home/runtime
+      chmod 0777 star-home/web/assets
+      chmod 0755 yii
+
+  ... initialization completed.
+
+bogon:galaxy admindyn$ 
+
+
+
+
+
+
+
+
