@@ -1,0 +1,56 @@
+安装yii框架 商城 应用 yii数据库迁移 命令 使用
+
+
+
+bogon:galaxy admindyn$ yii migrate
+-bash: yii: command not found
+bogon:galaxy admindyn$ php yii migrate
+Yii Migration Tool (based on Yii v2.0.11-dev)
+
+Creating migration history table "migration"...Done.
+Total 1 new migration to be applied:
+	m140608_201405_user_init
+
+Apply the above migration? (yes|no) [no]:y
+*** applying m140608_201405_user_init
+    > create table {{%user}} ... done (time: 0.095s)
+    > create unique index username on {{%user}} (username) ... done (time: 0.287s)
+    > create index role on {{%user}} (role) ... done (time: 0.112s)
+    > create index status on {{%user}} (status) ... done (time: 0.157s)
+    > create index created_at on {{%user}} (created_at) ... done (time: 0.157s)
+    > create table {{%profile}} ... done (time: 0.170s)
+    > add foreign key FK_profile_user: {{%profile}} (user_id) references {{%user}} (id) ... done (time: 0.260s)
+    > create table {{%user_email}} ... done (time: 0.132s)
+    > add foreign key FK_user_email_user: {{%user_email}} (user_id) references {{%user}} (id) ... done (time: 0.161s)
+    > execute SQL: INSERT INTO {{%user}} (`username`, `email`, `auth_key`, `password_hash`, `password_reset_token`, `role`, `status`, `created_at`, `updated_at`)
+                VALUES ('admin', 'admin@demo.com', '?a?N??bQǭL??ēBU咺??:YUf?', '$2y$13$SD8E0/I.CgzlRkJ61BRTlO8Rl92ZkuxIL3fpYvqAl4eT5h3b5YYW2', '', 'admin', 1, 1480499288, 1480499288) ...Exception 'yii\db\Exception' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xF8a\xD2N\xF2\xE9...' for column 'auth_key' at row 1
+The SQL being executed was: INSERT INTO `user` (`username`, `email`, `auth_key`, `password_hash`, `password_reset_token`, `role`, `status`, `created_at`, `updated_at`)
+                VALUES ('admin', 'admin@demo.com', '?a?N??bQǭL??ēBU咺??:YUf?', '$2y$13$SD8E0/I.CgzlRkJ61BRTlO8Rl92ZkuxIL3fpYvqAl4eT5h3b5YYW2', '', 'admin', 1, 1480499288, 1480499288)'
+
+in /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/db/Schema.php:637
+
+Error Info:
+Array
+(
+    [0] => HY000
+    [1] => 1366
+    [2] => Incorrect string value: '\xF8a\xD2N\xF2\xE9...' for column 'auth_key' at row 1
+)
+
+Stack trace:
+#0 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/db/Command.php(854): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `us...')
+#1 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/db/Migration.php(178): yii\db\Command->execute()
+#2 /Users/admindyn/Desktop/php工作目录/galaxy/console/migrations/m140608_201405_user_init.php(70): yii\db\Migration->execute('INSERT INTO {{%...')
+#3 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(651): m140608_201405_user_init->up()
+#4 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(163): yii\console\controllers\BaseMigrateController->migrateUp('m140608_201405_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#7 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('', Array)
+#9 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/base/Module.php(524): yii\console\Controller->runAction('', Array)
+#10 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#11 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#12 /Users/admindyn/Desktop/php工作目录/galaxy/vendor/yiisoft/yii2/base/Application.php(373): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /Users/admindyn/Desktop/php工作目录/galaxy/yii(31): yii\base\Application->run()
+#14 {main}
+bogon:galaxy admindyn$ 
